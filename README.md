@@ -7,11 +7,6 @@
 
 <br />
 
-<div align="center">
-    <img src="./public/Paomedia-Small-N-Flat-Book-bookmark.512.png" height="100px" />
-    <h1>Dictionary</h1>
-</div>
-
 ## How to Use
 
 ### Requirements:
