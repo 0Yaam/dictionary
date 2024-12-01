@@ -24,7 +24,7 @@ const HomePage = () => {
   };
 
   const searchHandler = () => {
-    if (word == "") {
+    if (word === "") {
       toast.error("Enter a Word");
       setWordMeaning([]);
       return;
@@ -33,7 +33,7 @@ const HomePage = () => {
     }
   };
 
-  // them change
+  //them change
   useEffect(() => {
     if (toggle) {
       document.documentElement.classList.add("dark");
@@ -43,35 +43,38 @@ const HomePage = () => {
   }, [toggle]);
 
   return (
-    <div className={`px-4  dark:bg-[#ffffff]`}>
-      <Header toggle={toggle} setToggle={setToggle} />
-      <Search word={word} setWord={setWord} searchHandler={searchHandler} />
+    <div
+  className={`w-screen h-screen px-4 dark:bg-[#ffffff] bg-gradient-to-b from-white to-[#fff6ee]`}
+>
+  <Header toggle={toggle} setToggle={setToggle} />
+  <Search word={word} setWord={setWord} searchHandler={searchHandler} />
 
+  <>
+    {loading ? (
+      <div className="mx-auto h-screen pt-10 text-center max-w-3xl">
+        <Loader />
+      </div>
+    ) : (
       <>
-        {loading ? (
-          <div className="mx-auto h-screen pt-10 text-center  max-w-3xl">
-            <Loader />
+        {wordMeaning.length === 0 ? (
+          <div className="h-screen mx-auto p-3 max-w-3xl">
+            <div>
+              <div className="mx-auto text-4xl font-bold text-center font-sans text-violet-500 p-4">
+                My Dictionary
+              </div>
+            </div>
+            <img className="mx-auto" src={img1} />
           </div>
         ) : (
-          <>
-            {wordMeaning.length == 0 ? (
-              <div className=" h-screen mx-auto p-3  max-w-3xl">
-                <div>
-                  <div className="mx-auto text-4xl font-bold text-center font-sans text-violet-500 p-4">
-                    Your Personal Dictionary
-                  </div>
-                </div>
-                <img className="mx-auto" src={img1} />
-              </div>
-            ) : (
-              <WordComp wordMeaning={wordMeaning} />
-            )}
-          </>
+          <WordComp wordMeaning={wordMeaning} />
         )}
       </>
+    )}
+  </>
 
-      <Footer />
-    </div>
+  <Footer />
+</div>
+
   );
 };
 

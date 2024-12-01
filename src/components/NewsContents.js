@@ -1170,7 +1170,7 @@ you on an{" "}
         
       </p>
 
-      {/* Popup hiển thị nghĩa chi tiết */}
+      {/* Popup hiển thị nghĩa chi tiết  */}
       {selectedPhrase && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
           <div className="bg-white p-6 rounded-lg w-[500px] shadow-lg relative">
