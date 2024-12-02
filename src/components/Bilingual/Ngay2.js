@@ -121,11 +121,13 @@ const VocabularyPopup = () => {
 
   return (
     <>
-      <Header />
-      <header className="w-[666px] h-20 bg-[#ffecdb] left-[550px] flex justify-center items-center mt-10 mb-14 border border-[#faede1] rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold relative">
-        Song ngữ
-        <img src={hi} alt="" className="absolute top-1 right-2 w-20 h-20" />
-      </header>
+       <Header />
+    <div className="flex relative justify-center">
+  <header className="w-[666px] h-20 bg-[#ffecdb] left-[550px] flex items-center mt-10 mb-14 border border-[#faede1] rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold ">
+    <div className="flex ml-[270px]">Song ngữ</div>
+    <img src={hi} alt="" className="ml-[200px] w-20 h-20" />
+  </header>
+</div>
       
       <div className="flex flex-col h-[1/2] w-[680px] bg-[#f8f4f6] p-10 mx-auto rounded-3xl border shadow shadow-[#f5f2f4]">
         <div className="flex justify-center">

@@ -9,7 +9,7 @@ const NewsMenu = () => {
     <Header />
     <div className="w-[666px] h-[767px] flex flex-col items-center ">
     
-        <header className="w-[666px] h-20 bg-[#ffecdb] flex justify-center items-center mb-14 border border-[#faede1] rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold relative">
+        <header className="w-[666px] h-20 bg-[#ffecdb] flex justify-center items-center mb-14 mt-10 border border-[#faede1] rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold relative">
           Song ngữ
           <img src={hi} alt="" className="absolute top-1 right-2 w-20 h-20" />
         </header>

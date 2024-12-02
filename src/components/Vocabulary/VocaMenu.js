@@ -5,15 +5,15 @@ import excited from "../../Assets/excited.png"
 
 const VocaMenu = () => {
   return (
-    <div className="flex flex-col bg-gradient-to-b from-white to-[#fff6ee] w-full h-screen  items-center">
+    <div className="flex flex-col bg-gradient-to-b from-white to-[#fff6ee] w-full h-full  items-center">
     <Header />
     <div className="w-[666px] h-[767px] flex flex-col items-center ">
-      <header className="w-[666px] h-20 bg-[#ffecdb] flex justify-center items-center  mb-14 border border-[#faede1] rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold relative">
+      <header className="w-[666px] h-20 bg-[#ffecdb] flex justify-center items-center mt-10 border border-[#faede1] rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold relative">
         Vocabulary soon available
         
         <img src={excited} alt="" className="absolute right-[20px] w-20 h-20 " />
       </header>
-        <main className="w-full h-full">
+        <main className="w-full h-100% mt-14">
           <div className="border rounded shadow-md mb-5 bg-[#f7fafc] w-full max-w-[666px] min-w-[666px]">
             <input type="checkbox" id="accordion1" className="hidden peer" />
             <label

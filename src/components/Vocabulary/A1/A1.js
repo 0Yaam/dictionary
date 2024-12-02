@@ -91,7 +91,7 @@ const A1 = () => {
             <img src={love} alt="" className="absolute top-30 right-[580px]  w-20 h-20" />
           </div>
 
-          <div className="w-full bg-[#f9f0e7] p-4 rounded-lg shadow-md mb-8 border border-white">
+          <div className="w-full bg-[#f9f0e7] p-4 rounded-lg shadow-md mb-14 mt-10 border border-white">
             <div className="w-full flex items-center gap-4">
               <button 
                 className="bg-gray-300 rounded-md px-4 py-2 shadow-md hover:bg-[#b6c6cc]"
