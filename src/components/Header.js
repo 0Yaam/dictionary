@@ -16,9 +16,6 @@ const Header = ({ toggle, setToggle }) => {
   return (
     <div>
       <div class="  rounded-r-2xl flex justify-center ">
-             
-              
-              
              <ul class="px-4 py-4 h-full space-y-2 text-gray-800 font-serif flex text-center ">
                 <li>
                   <Link to = "/"
@@ -29,7 +26,7 @@ const Header = ({ toggle, setToggle }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link to = "/news"
+                  <Link to = "/bilingual"
                     class="flex w-full items-center p-2 rounded-lg mx-10 hover:bg-white hover:text-green-400">
                     <TbVocabulary size={29} />
 
@@ -37,10 +34,10 @@ const Header = ({ toggle, setToggle }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link to = "/"
+                  <Link to = "/vocabulary"
                    class="flex w-full items-center p-2 rounded-lg mx-10 hover:bg-white hover:text-green-400">
                     <BiAccessibility size={29} />
-                    <span class="ml-3 font-sans font-semibold">Sevice</span>
+                    <span class="ml-3 font-sans font-semibold">Vocabulary-Meta</span>
                   </Link>
                 </li>
                 <li>

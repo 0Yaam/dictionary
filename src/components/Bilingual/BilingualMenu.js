@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Header from "./Header";
+import Header from "../Header";
 
 const NewsMenu = () => {
   return (
-    <div className="bg-gradient-to-b from-white to-[#fff6ee] w-full h-screen flex justify-center items-center ">
-      <div className="flex flex-col w-[666px] h-[767px] justify-self-center">
-        <Header />
-        <header className="w-[666px] h-20 bg-[#ffecdb] flex justify-center items-center mt-14 mb-14 border border-[#faede1] rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold">
+    <div className="flex flex-col bg-gradient-to-b from-white to-[#fff6ee] w-full h-screen  items-center">
+    <Header />
+    <div className="w-[666px] h-[767px] flex flex-col items-center justify-start">
+      <header className="w-[666px] h-20 bg-[#ffecdb] flex justify-center items-center  mb-14 border border-[#faede1] rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold">
         Song ngữ
-        </header>
+      </header>
         <main>
           <div className="border rounded shadow-md mb-5 bg-[#f7fafc]">
             <input type="checkbox" id="accordion1" className="hidden peer" />
@@ -46,28 +46,28 @@ const NewsMenu = () => {
           </div>
         
           <Link
-            to="/news/contents"
+            to="/bilingual/ngay1"
             className= "w-[666px] h-20 bg-[#f7fafc] flex justify-self-auto items-center font-semibold px-4 border border-[#edeeef] rounded-lg hover:bg-[#ffeff7] my-2 "
           >
             <span>Anh - Việt - Ngày 1</span>
           </Link>
 
           <Link
-            to="/news/contents"
+        to="/bilingual/ngay2"
             className="w-[666px] h-20 bg-[#f7fafc] flex justify-self-auto items-center font-semibold px-4 border border-[#edeeef] rounded-lg hover:bg-[#ffeff7] my-2"
           >
             <span>Anh - Việt - Ngày 2</span>
           </Link>
 
           <Link
-            to="/news/contents"
+            to="/bilingual/ngay3"
             className="w-[666px] h-20 bg-[#f7fafc] flex justify-self-auto items-center font-semibold px-4 border border-[#edeeef] rounded-lg hover:bg-[#ffeff7] my-2"
           >
             <span>Anh - Việt - Ngày 3</span>
           </Link>
 
           <Link
-            to="/news/contents"
+            to="/bilingual/ngay4"
             className="w-[666px] h-20 bg-[#f7fafc] flex justify-self-auto items-center font-semibold px-4 border border-[#edeeef] rounded-lg hover:bg-[#ffeff7] my-2"
           >
             <span>Anh - Việt - Ngày 4</span>

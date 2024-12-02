@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import Header  from "./Header";
+import Header from "../Header";
 
 const VocabularyPopup = () => {
   // State để lưu cụm từ được chọn
   const [selectedPhrase, setSelectedPhrase] = useState(null);
 
   // Danh sách cụm từ và thông tin chi tiết
-  const vocabulary = {
+  const DataVoca = {
     "Travel": {
         "word": "Travel",
         "type": "v",
@@ -899,7 +899,7 @@ const VocabularyPopup = () => {
 
   // Hàm xử lý khi click vào cụm từ
   const handlePhraseClick = (phrase) => {
-    setSelectedPhrase(vocabulary[phrase]); // Lưu thông tin cụm từ được chọn
+    setSelectedPhrase(DataVoca[phrase]); // Lưu thông tin cụm từ được chọn
   };
 
   // Hàm đóng popup

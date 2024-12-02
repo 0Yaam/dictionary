@@ -1,9 +1,9 @@
 # Dictionary Project
 
 ### Developed by:
-- Nguyễn Ngọc Trường Dân
-- Nguyễn Hưng Thịnh
-- Vũ Thế Huỳnh
+- Nguyễn Ngọc Trường Dân - 2312590
+- Nguyễn Hưng Thịnh - 2312756
+- Vũ Thế Huỳnh - 2312639
 
 <br />
 
