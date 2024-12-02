@@ -5,41 +5,38 @@ import Header from "../../Header";
 import imgg from "../../../Assets/happy.png"
 
 const VocaNgay4 = () => {
-  const [day, setDay] = useState(1);
+  const [day, setDay] = useState(4); 
   const words = [
-    { english: "sustainability", vietnamese: "bền vững" },
-{ english: "artificial intelligence", vietnamese: "trí tuệ nhân tạo" },
-{ english: "genetics", vietnamese: "di truyền học" },
-{ english: "quantum physics", vietnamese: "vật lý lượng tử" },
-{ english: "climate change", vietnamese: "biến đổi khí hậu" },
-{ english: "renewable energy", vietnamese: "năng lượng tái tạo" },
-{ english: "cybersecurity", vietnamese: "an ninh mạng" }
+    { english: "cat", vietnamese: "mèo" },
+{ english: "dog", vietnamese: "chó" },
+{ english: "apple", vietnamese: "táo" },
+{ english: "banana", vietnamese: "chuối" },
+{ english: "happy", vietnamese: "hạnh phúc" },
+{ english: "sad", vietnamese: "buồn" },
+{ english: "window", vietnamese: "cửa sổ" }
+
 
   ];
 
   const navigate = useNavigate();
 
-//nut next
   const handleNext = () => {
     const nextDay = day + 1;
     setDay(nextDay); 
-    navigate(`/vocabulary/A1/VocaNgay${nextDay}`);
+    navigate(`/vocabulary/A2/VocaNgay${nextDay}`);
   };
 
-
-  //previous
   const handlePrevious = () => {
     if (day > 1) {
       const previousDay = day - 1;
-      setDay(previousDay); 
-      navigate(`/vocabulary/A1/VocaNgay${previousDay}`);
+      setDay(previousDay);
+      navigate(`/vocabulary/A2/VocaNgay${previousDay}`);
     }
   };
 
   return (
     <>
       <Header />
-      
       <div className="w-full h-screen flex justify-center bg-gradient-to-b from-white to-[#fff6ee] relative">
         <button
           onClick={handlePrevious}
@@ -52,12 +49,10 @@ const VocaNgay4 = () => {
         </button>
 
         <div className="w-[500px] flex flex-col">
-        
           <div className="w-full h-16 bg-[#ffecdb] flex justify-center items-center mb-6 border border-white rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold relative mt-20">
-              Ngày {day}
-              <img src={imgg} alt="Icon" className="absolute top-[43%] right-4 transform -translate-y-1/2 w-[75px] h-[75px]"/>
+            Ngày {day}
+            <img src={imgg} alt="Icon" className="absolute top-[43%] right-4 transform -translate-y-1/2 w-[75px] h-[75px]"/>
           </div>
-
 
           <div className="flex-1 overflow-y-auto p-4 h-[calc(100%-80px)]">
             <div className="space-y-3">
@@ -93,6 +88,5 @@ const VocaNgay4 = () => {
     </>
   );
 };
-
 
 export default VocaNgay4;

@@ -5,29 +5,26 @@ import Header from "../../Header";
 import imgg from "../../../Assets/good (1).png"
 
 const VocaNgay2 = () => {
-  const [day, setDay] = useState(1);
+  const [day, setDay] = useState(2); 
   const words = [
-    { english: "entrepreneurship", vietnamese: "khởi nghiệp" },
-{ english: "globalization", vietnamese: "toàn cầu hóa" },
-{ english: "innovation", vietnamese: "sự đổi mới" },
-{ english: "biodiversity", vietnamese: "đa dạng sinh học" },
-{ english: "democracy", vietnamese: "dân chủ" },
-{ english: "philosophy", vietnamese: "triết học" },
-{ english: "psychology", vietnamese: "tâm lý học" }
+    { english: "bird", vietnamese: "chim" },
+{ english: "fish", vietnamese: "cá" },
+{ english: "flower", vietnamese: "hoa" },
+{ english: "book", vietnamese: "sách" },
+{ english: "pen", vietnamese: "bút" },
+{ english: "paper", vietnamese: "giấy" },
+{ english: "chair", vietnamese: "ghế" }
 
   ];
 
   const navigate = useNavigate();
 
-//nut next
   const handleNext = () => {
     const nextDay = day + 1;
     setDay(nextDay); 
     navigate(`/vocabulary/A1/VocaNgay${nextDay}`);
   };
 
-
-  //previous
   const handlePrevious = () => {
     if (day > 1) {
       const previousDay = day - 1;
@@ -39,7 +36,6 @@ const VocaNgay2 = () => {
   return (
     <>
       <Header />
-      
       <div className="w-full h-screen flex justify-center bg-gradient-to-b from-white to-[#fff6ee] relative">
         <button
           onClick={handlePrevious}
@@ -52,12 +48,10 @@ const VocaNgay2 = () => {
         </button>
 
         <div className="w-[500px] flex flex-col">
-        
           <div className="w-full h-16 bg-[#ffecdb] flex justify-center items-center mb-6 border border-white rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold relative mt-20">
-              Ngày {day}
-              <img src={imgg} alt="Icon" className="absolute top-[43%] right-4 transform -translate-y-1/2 w-[75px] h-[75px]"/>
+            Ngày {day}
+            <img src={imgg} alt="Icon" className="absolute top-[43%] right-4 transform -translate-y-1/2 w-[75px] h-[75px]"/>
           </div>
-
 
           <div className="flex-1 overflow-y-auto p-4 h-[calc(100%-80px)]">
             <div className="space-y-3">
@@ -93,6 +87,5 @@ const VocaNgay2 = () => {
     </>
   );
 };
-
 
 export default VocaNgay2;

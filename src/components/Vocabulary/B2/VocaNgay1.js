@@ -5,29 +5,27 @@ import Header from "../../Header";
 import imgg from "../../../Assets/shy.png"
 
 const VocaNgay1 = () => {
-  const [day, setDay] = useState(1);
+  const [day, setDay] = useState(1); 
   const words = [
-    { english: "environment", vietnamese: "môi trường" },
-    { english: "technology", vietnamese: "công nghệ" },
-    { english: "sustainable", vietnamese: "bền vững" },
-    { english: "economy", vietnamese: "kinh tế" },
-    { english: "culture", vietnamese: "văn hóa" },
-    { english: "education", vietnamese: "giáo dục" },
-    { english: "responsibility", vietnamese: "trách nhiệm" }
-    
+    { english: "morning", vietnamese: "buổi sáng" },
+    { english: "family", vietnamese: "gia đình" },
+    { english: "school", vietnamese: "trường học" },
+    { english: "friend", vietnamese: "bạn bè" },
+    { english: "beautiful", vietnamese: "đẹp" },
+    { english: "happy", vietnamese: "vui" },
+    { english: "food", vietnamese: "thức ăn" },
   ];
 
   const navigate = useNavigate();
 
-//nut next
+ 
   const handleNext = () => {
     const nextDay = day + 1;
     setDay(nextDay); 
     navigate(`/vocabulary/A1/VocaNgay${nextDay}`);
   };
 
-
-  //previous
+ 
   const handlePrevious = () => {
     if (day > 1) {
       const previousDay = day - 1;
@@ -82,6 +80,8 @@ const VocaNgay1 = () => {
             </div>
           </div>
         </div>
+        
+       
 
         <button
           onClick={handleNext}

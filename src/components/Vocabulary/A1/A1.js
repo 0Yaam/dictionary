@@ -86,10 +86,10 @@ const A1 = () => {
       <Header />
       <div className="w-full h-screen flex justify-center bg-gradient-to-b from-white to-[#fff6ee]">
         <div className="w-[666px] h-[767px] flex flex-col ">
-          <div className="w-full h-20 bg-[#ffecdb] flex justify-center items-center mb-8 mt-10 border border-white rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold">
-            <span>Vocabulary soon available</span>
-            <img src={love} alt="" className="absolute top-30 right-[580px]  w-20 h-20" />
-          </div>
+        <header className="w-[666px] h-20 bg-[#ffecdb] flex justify-center items-center mb-14 mt-10 border border-[#faede1] rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold relative">
+          Vocabulary
+          <img src={love} alt="" className="absolute top-1 right-2 w-20 h-20" />
+        </header>
 
           <div className="w-full bg-[#f9f0e7] p-4 rounded-lg shadow-md mb-14 mt-10 border border-white">
             <div className="w-full flex items-center gap-4">

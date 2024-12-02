@@ -4,10 +4,8 @@ import hi from "../../Assets/love.png"
 import voice1 from "../../Assets/Audio/voice3.mp3"
 
 const VocabularyPopup = () => {
-  // State để lưu cụm từ được chọn
   const [selectedPhrase, setSelectedPhrase] = useState(null);
 
-  // Danh sách cụm từ và thông tin chi tiết
   const vocabulary = {
     "brightly": {
       "word": "brightly",
@@ -79,14 +77,12 @@ const VocabularyPopup = () => {
 
   };
 
-  // Hàm xử lý khi click vào cụm từ
   const handlePhraseClick = (phrase) => {
-    setSelectedPhrase(vocabulary[phrase]); // Lưu thông tin cụm từ được chọn
+    setSelectedPhrase(vocabulary[phrase]);
   };
 
-  // Hàm đóng popup
   const closePopup = () => {
-    setSelectedPhrase(null); // Đặt lại trạng thái về null
+    setSelectedPhrase(null); 
   };
 
   return (

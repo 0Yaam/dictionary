@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom"; // Thêm import Link
 import Header from "../../Header";
 import love from "../../../Assets/mockery.png"
-
-const A2 = () => {
+const A1 = () => {
 
   // định nghĩa cau truc node
   class TreeNode {
@@ -87,12 +86,12 @@ const A2 = () => {
       <Header />
       <div className="w-full h-screen flex justify-center bg-gradient-to-b from-white to-[#fff6ee]">
         <div className="w-[666px] h-[767px] flex flex-col ">
-          <div className="w-full h-20 bg-[#ffecdb] flex justify-center items-center mb-8 mt-10 border border-white rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold">
-            <span>Vocabulary soon available</span>
-            <img src={love} alt="" className="absolute top-30 right-[580px]  w-20 h-20" />
-          </div>
+        <header className="w-[666px] h-20 bg-[#ffecdb] flex justify-center items-center mb-14 mt-10 border border-[#faede1] rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold relative">
+          Vocabulary
+          <img src={love} alt="" className="absolute top-1 right-2 w-20 h-20" />
+        </header>
 
-          <div className="w-full bg-[#f9f0e7] p-4 rounded-lg shadow-md mb-8 border border-white">
+          <div className="w-full bg-[#f9f0e7] p-4 rounded-lg shadow-md mb-14 mt-10 border border-white">
             <div className="w-full flex items-center gap-4">
               <button 
                 className="bg-gray-300 rounded-md px-4 py-2 shadow-md hover:bg-[#b6c6cc]"
@@ -142,4 +141,4 @@ const A2 = () => {
   );
 };
 
-export default A2;
+export default A1;

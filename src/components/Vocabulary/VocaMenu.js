@@ -5,16 +5,15 @@ import excited from "../../Assets/excited.png"
 
 const VocaMenu = () => {
   return (
-    <div className="flex flex-col bg-gradient-to-b from-white to-[#fff6ee] w-full h-full  items-center">
-    <Header />
-    <div className="w-[666px] h-[767px] flex flex-col items-center ">
-      <header className="w-[666px] h-20 bg-[#ffecdb] flex justify-center items-center mt-10 border border-[#faede1] rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold relative">
-        Vocabulary soon available
-        
-        <img src={excited} alt="" className="absolute right-[20px] w-20 h-20 " />
-      </header>
-        <main className="w-full h-100% mt-14">
-          <div className="border rounded shadow-md mb-5 bg-[#f7fafc] w-full max-w-[666px] min-w-[666px]">
+    <div className="flex flex-col bg-gradient-to-b from-white to-[#fff6ee] w-screen h-screen items-center">
+      <Header />
+      <div className="w-[666px] h-[767px] flex flex-col items-center">
+        <header className="w-[666px] h-[400px] bg-[#ffecdb] flex justify-center items-center mb-10 border border-[#faede1] rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold relative">
+          Vocabulary soon available
+          <img src={excited} alt="" className="absolute right-[20px] w-20 h-20" />
+        </header>
+        <main className="w-full flex flex-col items-center space-y-4">
+          <div className="border rounded shadow-md bg-[#f7fafc] w-full max-w-[666px] min-w-[666px]">
             <input type="checkbox" id="accordion1" className="hidden peer" />
             <label
               htmlFor="accordion1"
@@ -36,18 +35,18 @@ const VocaMenu = () => {
                 />
               </svg>
             </label>
-            <div className="hidden peer-checked:block bg-gray-100 w-full h-30 p-5 text-sm text-left">
+            <div className="hidden peer-checked:block bg-gray-100 w-full p-5 text-sm text-left">
               <p>
-                Chức năng cho phép học từ vựng theo cấp. <br /> <br /><br /> <br />
-                Trong mỗi cấp chia theo từng ngày. <br /> <br /><br /> <br />
+                Chức năng cho phép học từ vựng theo cấp. <br /> <br />
+                Trong mỗi cấp chia theo từng ngày. <br /> <br />
                 Có chức năng như sắp sếp, tìm kiếm, next, previous.
               </p>
             </div>
           </div>
-        
+
           <Link
             to="/vocabulary/A1"
-            className="w-full h-20 bg-[#f7fafc] flex justify-center items-center font-semibold px-4  border border-[#edeeef] rounded-lg hover:bg-[#ffeff7] my-2 text-base font-sans"
+            className="w-full h-20 bg-[#f7fafc] flex justify-center items-center font-semibold px-4 border border-[#edeeef] rounded-lg hover:bg-[#ffeff7] my-2 text-base font-sans"
           >
             <span>A1 (Beginner)</span>
           </Link>
@@ -86,9 +85,7 @@ const VocaMenu = () => {
           >
             <span>C2 (Proficiency)</span>
           </Link>
-
         </main>
-        <footer></footer>
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import Header from "../../Header";
 import imgg from "../../../Assets/sing.png"
 
 const VocaNgay7 = () => {
-  const [day, setDay] = useState(1);
+  const [day, setDay] = useState(7); 
   const words = [
     { english: "door", vietnamese: "cửa" },
 { english: "window", vietnamese: "cửa sổ" },
@@ -15,19 +15,19 @@ const VocaNgay7 = () => {
 { english: "book", vietnamese: "sách" },
 { english: "pen", vietnamese: "bút" }
 
+
   ];
 
   const navigate = useNavigate();
 
-//nut next
   const handleNext = () => {
+    if (day <= 7) {
     const nextDay = day + 1;
     setDay(nextDay); 
     navigate(`/vocabulary/A1/VocaNgay${nextDay}`);
+    }
   };
 
-
-  //previous
   const handlePrevious = () => {
     if (day > 1) {
       const previousDay = day - 1;
@@ -39,7 +39,6 @@ const VocaNgay7 = () => {
   return (
     <>
       <Header />
-      
       <div className="w-full h-screen flex justify-center bg-gradient-to-b from-white to-[#fff6ee] relative">
         <button
           onClick={handlePrevious}
@@ -52,12 +51,10 @@ const VocaNgay7 = () => {
         </button>
 
         <div className="w-[500px] flex flex-col">
-        
           <div className="w-full h-16 bg-[#ffecdb] flex justify-center items-center mb-6 border border-white rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold relative mt-20">
-              Ngày {day}
-              <img src={imgg} alt="Icon" className="absolute top-[43%] right-4 transform -translate-y-1/2 w-[75px] h-[75px]"/>
+            Ngày {day}
+            <img src={imgg} alt="Icon" className="absolute top-[43%] right-4 transform -translate-y-1/2 w-[75px] h-[75px]"/>
           </div>
-
 
           <div className="flex-1 overflow-y-auto p-4 h-[calc(100%-80px)]">
             <div className="space-y-3">
@@ -84,15 +81,18 @@ const VocaNgay7 = () => {
         </div>
 
         <button
-          onClick={handleNext}
-          className="absolute right-[calc(44%-300px)] top-[calc(44%-300px)] bg-gray-300 text-gray-700 w-[100px] h-[45px] rounded-md shadow-md hover:bg-gray-400 flex justify-center items-center font-bold"
+          onClick={handlePrevious}
+          className={`absolute right-[calc(44%-300px)] top-[calc(44%-300px)] ${
+            day > 1 ? "bg-gray-300 hover:bg-gray-400" : "bg-gray-200"
+          } text-gray-700 w-[100px] h-[45px] rounded-md shadow-md flex justify-center items-center font-bold`}
+          disabled={day >= 7}
         >
+          
           Next
         </button>
       </div>
     </>
   );
 };
-
 
 export default VocaNgay7;

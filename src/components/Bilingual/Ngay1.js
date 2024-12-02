@@ -4,10 +4,8 @@ import hi from "../../Assets/excited.png"
 import voice1 from "../../Assets/Audio/voice1.mp3"
 
 const VocabularyPopup = () => {
-  // State để lưu cụm từ được chọn
   const [selectedPhrase, setSelectedPhrase] = useState(null);
 
-  // Danh sách cụm từ và thông tin chi tiết
   const DataVoca = {
     "Travel": {
       "word": "Travel",
@@ -899,14 +897,12 @@ const VocabularyPopup = () => {
 
   };
 
-  // Hàm xử lý khi click vào cụm từ
   const handlePhraseClick = (phrase) => {
-    setSelectedPhrase(DataVoca[phrase]); // Lưu thông tin cụm từ được chọn
+    setSelectedPhrase(DataVoca[phrase]); 
   };
 
-  // Hàm đóng popup
   const closePopup = () => {
-    setSelectedPhrase(null); // Đặt lại trạng thái về null
+    setSelectedPhrase(null); 
   };
 
   return (
@@ -1186,7 +1182,7 @@ const VocabularyPopup = () => {
 
         </p>
 
-        {/* Popup hiển thị nghĩa chi tiết  */}
+        {/* Popup   */}
         {selectedPhrase && (
           <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
             <div className="bg-white p-6 rounded-lg w-[500px] shadow-lg relative text-left text-base">

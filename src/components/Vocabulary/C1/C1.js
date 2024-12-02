@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom"; // Thêm import Link
 import Header from "../../Header";
-import love from "../../../Assets/excited.png"
-
-const C1 = () => {
+import love from "../../../Assets/mockery.png"
+const A1 = () => {
 
   // định nghĩa cau truc node
   class TreeNode {
@@ -87,12 +86,12 @@ const C1 = () => {
       <Header />
       <div className="w-full h-screen flex justify-center bg-gradient-to-b from-white to-[#fff6ee]">
         <div className="w-[666px] h-[767px] flex flex-col ">
-          <div className="w-full h-20 bg-[#ffecdb] flex justify-center items-center mb-8 mt-10 border border-white rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold">
-            <span>Vocabulary soon available</span>
-            <img src={love} alt="" className="absolute top-30 right-[580px]  w-20 h-20" />
-          </div>
+        <header className="w-[666px] h-20 bg-[#ffecdb] flex justify-center items-center mb-14 mt-10 border border-[#faede1] rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold relative">
+          Vocabulary
+          <img src={love} alt="" className="absolute top-1 right-2 w-20 h-20" />
+        </header>
 
-          <div className="w-full bg-[#f9f0e7] p-4 rounded-lg shadow-md mb-8 border border-white">
+          <div className="w-full bg-[#f9f0e7] p-4 rounded-lg shadow-md mb-14 mt-10 border border-white">
             <div className="w-full flex items-center gap-4">
               <button 
                 className="bg-gray-300 rounded-md px-4 py-2 shadow-md hover:bg-[#b6c6cc]"
@@ -129,7 +128,7 @@ const C1 = () => {
               // Sử dụng Link để gắn đường dẫn cho từng nút
               <Link
                 key={index}
-                to={`/vocabulary/A1/Voca${node.value.replace("Ngày ", "Ngay")}`} // Đường dẫn tùy chỉnh cho mỗi nút
+                to={`/vocabulary/C1/Voca${node.value.replace("Ngày ", "Ngay")}`} // Đường dẫn tùy chỉnh cho mỗi nút
                 className="bg-gray-200 w-full h-12 flex items-center justify-center rounded-md shadow-md hover:bg-gray-300"
               >
                 {node.value}
@@ -142,4 +141,4 @@ const C1 = () => {
   );
 };
 
-export default C1;
+export default A1;

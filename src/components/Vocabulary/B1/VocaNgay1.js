@@ -5,7 +5,7 @@ import Header from "../../Header";
 import imgg from "../../../Assets/shy.png"
 
 const VocaNgay1 = () => {
-  const [day, setDay] = useState(1);
+  const [day, setDay] = useState(1); 
   const words = [
     { english: "morning", vietnamese: "buổi sáng" },
     { english: "family", vietnamese: "gia đình" },
@@ -18,15 +18,14 @@ const VocaNgay1 = () => {
 
   const navigate = useNavigate();
 
-//nut next
+ 
   const handleNext = () => {
     const nextDay = day + 1;
     setDay(nextDay); 
     navigate(`/vocabulary/A1/VocaNgay${nextDay}`);
   };
 
-
-  //previous
+ 
   const handlePrevious = () => {
     if (day > 1) {
       const previousDay = day - 1;
@@ -81,6 +80,8 @@ const VocaNgay1 = () => {
             </div>
           </div>
         </div>
+        
+       
 
         <button
           onClick={handleNext}

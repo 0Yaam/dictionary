@@ -5,29 +5,27 @@ import Header from "../../Header";
 import imgg from "../../../Assets/good (1).png"
 
 const VocaNgay5 = () => {
-  const [day, setDay] = useState(1);
+  const [day, setDay] = useState(5); 
   const words = [
-    { english: "biotechnology", vietnamese: "công nghệ sinh học" },
-    { english: "ecology", vietnamese: "sinh thái học" },
-    { english: "sociopolitical", vietnamese: "xã hội chính trị" },
-    { english: "metaphysics", vietnamese: "siêu hình học" },
-    { english: "epistemology", vietnamese: "tri thức học" },
-    { english: "linguistics", vietnamese: "ngôn ngữ học" },
-    { english: "cybernetics", vietnamese: "điều khiển học" }
-    
+    { english: "book", vietnamese: "sách" },
+{ english: "teacher", vietnamese: "giáo viên" },
+{ english: "rain", vietnamese: "mưa" },
+{ english: "sun", vietnamese: "mặt trời" },
+{ english: "flower", vietnamese: "hoa" },
+{ english: "day", vietnamese: "ngày" },
+{ english: "night", vietnamese: "đêm" }
+
+
   ];
 
   const navigate = useNavigate();
 
-//nut next
   const handleNext = () => {
     const nextDay = day + 1;
     setDay(nextDay); 
     navigate(`/vocabulary/A1/VocaNgay${nextDay}`);
   };
 
-
-  //previous
   const handlePrevious = () => {
     if (day > 1) {
       const previousDay = day - 1;
@@ -39,7 +37,6 @@ const VocaNgay5 = () => {
   return (
     <>
       <Header />
-      
       <div className="w-full h-screen flex justify-center bg-gradient-to-b from-white to-[#fff6ee] relative">
         <button
           onClick={handlePrevious}
@@ -52,12 +49,10 @@ const VocaNgay5 = () => {
         </button>
 
         <div className="w-[500px] flex flex-col">
-        
           <div className="w-full h-16 bg-[#ffecdb] flex justify-center items-center mb-6 border border-white rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold relative mt-20">
-              Ngày {day}
-              <img src={imgg} alt="Icon" className="absolute top-[43%] right-4 transform -translate-y-1/2 w-[75px] h-[75px]"/>
+            Ngày {day}
+            <img src={imgg} alt="Icon" className="absolute top-[43%] right-4 transform -translate-y-1/2 w-[75px] h-[75px]"/>
           </div>
-
 
           <div className="flex-1 overflow-y-auto p-4 h-[calc(100%-80px)]">
             <div className="space-y-3">
@@ -93,6 +88,5 @@ const VocaNgay5 = () => {
     </>
   );
 };
-
 
 export default VocaNgay5;

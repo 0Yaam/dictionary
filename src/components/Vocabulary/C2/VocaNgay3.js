@@ -5,29 +5,26 @@ import Header from "../../Header";
 import imgg from "../../../Assets/sing.png"
 
 const VocaNgay3 = () => {
-  const [day, setDay] = useState(1);
+  const [day, setDay] = useState(3); 
   const words = [
-    { english: "economics", vietnamese: "kinh tế học" },
-{ english: "sociology", vietnamese: "xã hội học" },
-{ english: "pharmaceutical", vietnamese: "dược phẩm" },
-{ english: "neuroscience", vietnamese: "khoa học thần kinh" },
-{ english: "astronomy", vietnamese: "thiên văn học" },
-{ english: "architecture", vietnamese: "kiến trúc" },
-{ english: "anthropology", vietnamese: "nhân học" }
+    { english: "road", vietnamese: "đường" },
+{ english: "bridge", vietnamese: "cầu" },
+{ english: "city", vietnamese: "thành phố" },
+{ english: "village", vietnamese: "làng" },
+{ english: "forest", vietnamese: "rừng" },
+{ english: "sky", vietnamese: "bầu trời" },
+{ english: "star", vietnamese: "ngôi sao" }
 
   ];
 
   const navigate = useNavigate();
 
-//nut next
   const handleNext = () => {
     const nextDay = day + 1;
     setDay(nextDay); 
     navigate(`/vocabulary/A1/VocaNgay${nextDay}`);
   };
 
-
-  //previous
   const handlePrevious = () => {
     if (day > 1) {
       const previousDay = day - 1;
@@ -39,7 +36,6 @@ const VocaNgay3 = () => {
   return (
     <>
       <Header />
-      
       <div className="w-full h-screen flex justify-center bg-gradient-to-b from-white to-[#fff6ee] relative">
         <button
           onClick={handlePrevious}
@@ -52,12 +48,10 @@ const VocaNgay3 = () => {
         </button>
 
         <div className="w-[500px] flex flex-col">
-        
           <div className="w-full h-16 bg-[#ffecdb] flex justify-center items-center mb-6 border border-white rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold relative mt-20">
-              Ngày {day}
-              <img src={imgg} alt="Icon" className="absolute top-[43%] right-4 transform -translate-y-1/2 w-[75px] h-[75px]"/>
+            Ngày {day}
+            <img src={imgg} alt="Icon" className="absolute top-[43%] right-4 transform -translate-y-1/2 w-[75px] h-[75px]"/>
           </div>
-
 
           <div className="flex-1 overflow-y-auto p-4 h-[calc(100%-80px)]">
             <div className="space-y-3">
@@ -93,6 +87,5 @@ const VocaNgay3 = () => {
     </>
   );
 };
-
 
 export default VocaNgay3;
