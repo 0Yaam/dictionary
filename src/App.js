@@ -18,6 +18,14 @@ import VocaNgay5A1 from "./components/Vocabulary/A1/VocaNgay5";
 import VocaNgay6A1 from "./components/Vocabulary/A1/VocaNgay6";
 import VocaNgay7A1 from "./components/Vocabulary/A1/VocaNgay7";
 
+import VocaNgay1A2 from "./components/Vocabulary/A2/VocaNgay1";
+import VocaNgay2A2 from "./components/Vocabulary/A2/VocaNgay2";
+import VocaNgay3A2 from "./components/Vocabulary/A2/VocaNgay3";
+import VocaNgay4A2 from "./components/Vocabulary/A2/VocaNgay4";
+import VocaNgay5A2 from "./components/Vocabulary/A2/VocaNgay5";
+import VocaNgay6A2 from "./components/Vocabulary/A2/VocaNgay6";
+import VocaNgay7A2 from "./components/Vocabulary/A2/VocaNgay7";
+import Contact from "./Services/Contact";
 
 
 
@@ -25,16 +33,11 @@ import VocaNgay7A1 from "./components/Vocabulary/A1/VocaNgay7";
 
 
 
-import Header from "./components/Header";
+
 import HomePage from './pages/HomePage'
-import { FaHome, FaConciergeBell } from "react-icons/fa";
-import { GiCoffeeCup } from "react-icons/gi";
-import { IoSettings } from "react-icons/io5";
-import React, { useState } from "react";
-import { Link, Routes, Route } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 function App() {
 
-  const [activeContent, setActiveContent] = useState("home") 
 
   return (
     <div className="App">
@@ -44,7 +47,7 @@ function App() {
             
           <div className="flex">
             
-           <div class="flex-1  p-6">
+           <div class="flex-1 h-full">
                  <div class="overflow-hidden tracking-widest text-center
                  rounded-lg border-spacing-1 border-gray-300 text-xs">
                     <Routes>
@@ -64,11 +67,19 @@ function App() {
                       <Route path='/vocabulary/A1/VocaNgay1' element={<VocaNgay1A1 />} />
                       <Route path='/vocabulary/A1/VocaNgay2' element={<VocaNgay2A1 />} />
                       <Route path='/vocabulary/A1/VocaNgay3' element={<VocaNgay3A1 />} />
-                     
                       <Route path='/vocabulary/A1/VocaNgay4' element={<VocaNgay4A1 />} />
                       <Route path='/vocabulary/A1/VocaNgay5' element={<VocaNgay5A1 />} />
                       <Route path='/vocabulary/A1/VocaNgay6' element={<VocaNgay6A1 />} />
                       <Route path='/vocabulary/A1/VocaNgay7' element={<VocaNgay7A1/>} />
+
+                      <Route path='/vocabulary/A2/VocaNgay1' element={<VocaNgay1A2 />} />
+                      <Route path='/vocabulary/A2/VocaNgay2' element={<VocaNgay2A2 />} />
+                      <Route path='/vocabulary/A2/VocaNgay3' element={<VocaNgay3A2 />} />
+                      <Route path='/vocabulary/A2/VocaNgay4' element={<VocaNgay4A2 />} />
+                      <Route path='/vocabulary/A2/VocaNgay5' element={<VocaNgay5A2 />} />
+                      <Route path='/vocabulary/A2/VocaNgay6' element={<VocaNgay6A2 />} />
+                      <Route path='/vocabulary/A2/VocaNgay7' element={<VocaNgay7A2/>} />
+                      <Route path='/contact' element={<Contact/>} />
                     </Routes>
                  </div>        
          </div>

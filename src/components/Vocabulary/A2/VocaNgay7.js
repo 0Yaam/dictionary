@@ -2,35 +2,37 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "tailwindcss/tailwind.css";
 import Header from "../../Header";
+import imgg from "../../../Assets/sing.png"
 
 const VocaNgay7 = () => {
-  const [day, setDay] = useState(7); // Sử dụng useState để quản lý trạng thái
+  const [day, setDay] = useState(1);
   const words = [
-    { english: "door", vietnamese: "cửa" },
-{ english: "window", vietnamese: "cửa sổ" },
-{ english: "bed", vietnamese: "giường" },
-{ english: "chair", vietnamese: "ghế" },
-{ english: "table", vietnamese: "bàn" },
-{ english: "book", vietnamese: "sách" },
-{ english: "pen", vietnamese: "bút" }
-
+    { english: "anthropology", vietnamese: "nhân chủng học" },
+    { english: "climatology", vietnamese: "khí hậu học" },
+    { english: "sociology", vietnamese: "xã hội học" },
+    { english: "neurology", vietnamese: "thần kinh học" },
+    { english: "politics", vietnamese: "chính trị học" },
+    { english: "ethics", vietnamese: "đạo đức học" },
+    { english: "philosophy", vietnamese: "triết học" }
+    
 
   ];
 
   const navigate = useNavigate();
 
-  // Handle Next button
+//nut next
   const handleNext = () => {
     const nextDay = day + 1;
-    setDay(nextDay); // Cập nhật trạng thái `day`
+    setDay(nextDay); 
     navigate(`/vocabulary/A1/VocaNgay${nextDay}`);
   };
 
-  // Handle Previous button
+
+  //previous
   const handlePrevious = () => {
     if (day > 1) {
       const previousDay = day - 1;
-      setDay(previousDay); // Cập nhật trạng thái `day`
+      setDay(previousDay); 
       navigate(`/vocabulary/A1/VocaNgay${previousDay}`);
     }
   };
@@ -38,8 +40,8 @@ const VocaNgay7 = () => {
   return (
     <>
       <Header />
+      
       <div className="w-full h-screen flex justify-center bg-gradient-to-b from-white to-[#fff6ee] relative">
-        {/* Previous Button */}
         <button
           onClick={handlePrevious}
           className={`absolute left-[calc(44%-300px)] top-[calc(44%-300px)] ${
@@ -51,12 +53,13 @@ const VocaNgay7 = () => {
         </button>
 
         <div className="w-[500px] flex flex-col">
-          {/* Title Box */}
+        
           <div className="w-full h-16 bg-[#ffecdb] flex justify-center items-center mb-6 border border-white rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold relative mt-20">
-            Ngày {day}
+              Ngày {day}
+              <img src={imgg} alt="Icon" className="absolute top-[43%] right-4 transform -translate-y-1/2 w-[75px] h-[75px]"/>
           </div>
 
-          {/* Word List */}
+
           <div className="flex-1 overflow-y-auto p-4 h-[calc(100%-80px)]">
             <div className="space-y-3">
               {words.map((word, index) => (
@@ -81,7 +84,6 @@ const VocaNgay7 = () => {
           </div>
         </div>
 
-        {/* Next Button */}
         <button
           onClick={handleNext}
           className="absolute right-[calc(44%-300px)] top-[calc(44%-300px)] bg-gray-300 text-gray-700 w-[100px] h-[45px] rounded-md shadow-md hover:bg-gray-400 flex justify-center items-center font-bold"
@@ -92,5 +94,6 @@ const VocaNgay7 = () => {
     </>
   );
 };
+
 
 export default VocaNgay7;

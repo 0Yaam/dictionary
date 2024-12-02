@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Header from "../Header";
+import hi from "../../Assets/excited.png"
+import voice1 from "../../Assets/Audio/voice1.mp3"
 
 const VocabularyPopup = () => {
   // State để lưu cụm từ được chọn
@@ -910,15 +912,26 @@ const VocabularyPopup = () => {
   return (
     <>
     <Header />
+    
+    <header className="w-[666px] h-20 bg-[#ffecdb] left-[550px] flex justify-center items-center mt-10 mb-14 border border-[#faede1] rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold relative">
+          Song ngữ
+          <img src={hi} alt="" className="absolute top-1 right-2 w-20 h-20" />
+        </header>
     <div className="flex flex-col h-[1/2] w-[680px] bg-[#f8f4f6] p-10 mx-auto rounded-3xl border shadow shadow-[#f5f2f4]">
 
       <div className=" flex justify-center"><h1 className="text-3xl font-bold mb-5 text-[#036ce0]">Travel</h1></div>
-      
-      <p className="text-lg leading-7 font-semibold text-[#600000]">
+      <div className="mt-8 p-5 bg-[#f0f0f0] rounded-xl shadow-lg text-center mb-10">
+          <h2 className="text-xl font-bold mb-3 text-[#036ce0]">Listen to a Travel</h2>
+          <audio controls className="w-full">
+            <source src={voice1} type="audio/mp3" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      <p className="text-lg leading-7 font-semibold text-[#600000] text-left">
       <span className=" cursor-pointer underline" onClick={() => handlePhraseClick("Travel")}>
   Travel
 </span>{" "}
-is an 
+is an {" "}
 <span className=" cursor-pointer underline" onClick={() => handlePhraseClick("amazing")}>
   amazing
 </span>{" "}
@@ -1173,7 +1186,7 @@ you on an{" "}
       {/* Popup hiển thị nghĩa chi tiết  */}
       {selectedPhrase && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-white p-6 rounded-lg w-[500px] shadow-lg relative">
+          <div className="bg-white p-6 rounded-lg w-[500px] shadow-lg relative text-left text-base">
             <h2 className="text-xl font-bold mb-3 text-[#d8974c]">Từ vựng: {selectedPhrase.word}</h2>
             <p>
               <strong>Loại từ:</strong> {selectedPhrase.type}

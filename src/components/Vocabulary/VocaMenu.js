@@ -1,14 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Header from "../Header";
+import excited from "../../Assets/excited.png"
 
 const VocaMenu = () => {
   return (
     <div className="flex flex-col bg-gradient-to-b from-white to-[#fff6ee] w-full h-screen  items-center">
     <Header />
-    <div className="w-[666px] h-[767px] flex flex-col items-center justify-start">
-      <header className="w-[666px] h-20 bg-[#ffecdb] flex justify-center items-center  mb-14 border border-[#faede1] rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold">
+    <div className="w-[666px] h-[767px] flex flex-col items-center ">
+      <header className="w-[666px] h-20 bg-[#ffecdb] flex justify-center items-center  mb-14 border border-[#faede1] rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold relative">
         Vocabulary soon available
+        
+        <img src={excited} alt="" className="absolute right-[20px] w-20 h-20 " />
       </header>
         <main className="w-full h-full">
           <div className="border rounded shadow-md mb-5 bg-[#f7fafc] w-full max-w-[666px] min-w-[666px]">
@@ -37,7 +40,7 @@ const VocaMenu = () => {
               <p>
                 Chức năng cho phép học từ vựng theo cấp. <br /> <br /><br /> <br />
                 Trong mỗi cấp chia theo từng ngày. <br /> <br /><br /> <br />
-                Có chức năng như sắp sếp, tìm kiếm
+                Có chức năng như sắp sếp, tìm kiếm, next, previous.
               </p>
             </div>
           </div>

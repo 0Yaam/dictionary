@@ -20,14 +20,14 @@ const Header = ({ toggle, setToggle }) => {
                 <li>
                   <Link to = "/"
                    class="flex w-full items-center p-2 rounded-lg mt-2 mx-10
-                   hover:bg-white hover:text-green-400">
+                   hover:bg-white hover:text-[#6c63ff]">
                     <FaHome size={29} />
                     <span class="ml-3 font-sans font-semibold">Home</span>
                   </Link>
                 </li>
                 <li>
                   <Link to = "/bilingual"
-                    class="flex w-full items-center p-2 rounded-lg mx-10 hover:bg-white hover:text-green-400">
+                    class="flex w-full items-center p-2 rounded-lg mx-10 hover:bg-white hover:text-[#6c63ff]">
                     <TbVocabulary size={29} />
 
                     <span class="ml-3 font-sans font-semibold">Bilingual</span>
@@ -35,14 +35,14 @@ const Header = ({ toggle, setToggle }) => {
                 </li>
                 <li>
                   <Link to = "/vocabulary"
-                   class="flex w-full items-center p-2 rounded-lg mx-10 hover:bg-white hover:text-green-400">
+                   class="flex w-full items-center p-2 rounded-lg mx-10 hover:bg-white hover:text-[#6c63ff]">
                     <BiAccessibility size={29} />
                     <span class="ml-3 font-sans font-semibold">Vocabulary-Meta</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to = "/"
-                   class="flex w-full items-center p-2 rounded-lg mx-10 hover:bg-white hover:text-green-400">
+                  <Link to = "/contact"
+                   class="flex w-full items-center p-2 rounded-lg mx-10 hover:bg-white hover:text-[#6c63ff]">
                     <FaDev size={29} />
                     <span class="ml-3 font-sans font-semibold">Contact</span>
                   </Link>

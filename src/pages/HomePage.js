@@ -44,9 +44,10 @@ const HomePage = () => {
 
   return (
     <div
-  className={`w-screen h-screen px-4 dark:bg-[#ffffff] bg-gradient-to-b from-white to-[#fff6ee]`}
+  className={`w-screen h-100%  dark:bg-[#ffffff] bg-gradient-to-b from-white to-[#fff6ee]`}
 >
   <Header toggle={toggle} setToggle={setToggle} />
+  
   <Search word={word} setWord={setWord} searchHandler={searchHandler} />
 
   <>
@@ -63,7 +64,7 @@ const HomePage = () => {
                 My Dictionary
               </div>
             </div>
-            <img className="mx-auto" src={img1} />
+            <img className="mx-auto" src={img1} alt="" />
           </div>
         ) : (
           <WordComp wordMeaning={wordMeaning} />

@@ -1,15 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Header from "../Header";
+import hi from "../../Assets/hi.png"
 
 const NewsMenu = () => {
   return (
     <div className="flex flex-col bg-gradient-to-b from-white to-[#fff6ee] w-full h-screen  items-center">
     <Header />
-    <div className="w-[666px] h-[767px] flex flex-col items-center justify-start">
-      <header className="w-[666px] h-20 bg-[#ffecdb] flex justify-center items-center  mb-14 border border-[#faede1] rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold">
-        Song ngữ
-      </header>
+    <div className="w-[666px] h-[767px] flex flex-col items-center ">
+    
+        <header className="w-[666px] h-20 bg-[#ffecdb] flex justify-center items-center mb-14 border border-[#faede1] rounded-2xl shadow-md text-lg text-[#3b342e] font-sans font-bold relative">
+          Song ngữ
+          <img src={hi} alt="" className="absolute top-1 right-2 w-20 h-20" />
+        </header>
+      
         <main>
           <div className="border rounded shadow-md mb-5 bg-[#f7fafc]">
             <input type="checkbox" id="accordion1" className="hidden peer" />
@@ -18,6 +22,7 @@ const NewsMenu = () => {
               className="w-[666px] h-20 cursor-pointer py-3 px-4 flex justify-between items-center transition hover:bg-[#ffeff7] text-lg font-sans font-semibold"
             >
               <span>Giới thiệu</span>
+              
               <svg
                 className="w-4 h-4 transition-transform duration-300 peer-checked:rotate-180"
                 xmlns="http://www.w3.org/2000/svg"
