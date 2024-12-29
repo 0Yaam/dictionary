@@ -30,6 +30,6 @@
 ### Features:
 - Provides a bilingual dictionary (English - Vietnamese).
 - Click on underlined words to see their meanings instantly.
-...
+- ...
 ---
 
