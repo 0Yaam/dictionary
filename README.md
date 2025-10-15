@@ -1,5 +1,5 @@
 # Dictionary Project
-**Live demo:** [https://dictionary-ten.vercel.app/](https://dictionary-ten.vercel.app/)```https://mydictionary-ten.vercel.app/```
+**Live demo:** [https://dictionary-ten.vercel.app/](https://dictionary-ten.vercel.app/)
 ## How to Use
 
 ### Requirements:
