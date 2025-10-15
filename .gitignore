@@ -2,6 +2,10 @@
 node_modules/
 .pnp/
 .pnp.cjs
+node_modules/
+.cache/
+dist/
+build/
 
 # Build output
 build/
