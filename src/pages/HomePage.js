@@ -44,7 +44,7 @@ const HomePage = () => {
 
   return (
     <div
-  className={`w-screen h-100%  dark:bg-[#ffffff] bg-gradient-to-b from-white to-[#fff6ee]`}
+  className={`w-screen min-h-screen dark:bg-[#ffffff] bg-gradient-to-b from-white to-[#fff6ee]`}
 >
   <Header toggle={toggle} setToggle={setToggle} />
   

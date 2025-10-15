@@ -1,12 +1,6 @@
-import React, { useState } from "react";
-import { BiBookAlt } from "react-icons/bi";
-import { MdDarkMode } from "react-icons/md";
-import { BsFillSunFill } from "react-icons/bs";
-import ToogleBtn from "./ToogleBtn";
-import { FaHome, FaConciergeBell } from "react-icons/fa";
-import { GiCoffeeCup } from "react-icons/gi";
-import { IoSettings } from "react-icons/io5";
-import { Link, Routes, Route } from "react-router-dom"
+import React from "react";
+import { FaHome } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import { TbVocabulary } from "react-icons/tb";
 import { FaDev } from "react-icons/fa";
 import { BiAccessibility } from "react-icons/bi";
@@ -15,36 +9,36 @@ import { BiAccessibility } from "react-icons/bi";
 const Header = ({ toggle, setToggle }) => {
   return (
     <div>
-      <div class="  rounded-r-2xl flex justify-center ">
-             <ul class="px-4 py-4 h-full space-y-2 text-gray-800 font-serif flex text-center ">
+      <div className="  rounded-r-2xl flex justify-center ">
+             <ul className="px-4 py-4 h-full space-y-2 text-gray-800 font-serif flex text-center ">
                 <li>
                   <Link to = "/"
-                   class="flex w-full items-center p-2 rounded-lg mt-2 mx-10
+                   className="flex w-full items-center p-2 rounded-lg mt-2 mx-10
                    hover:bg-white hover:text-[#6c63ff]">
                     <FaHome size={29} />
-                    <span class="ml-3 font-sans font-semibold">Home</span>
+                    <span className="ml-3 font-sans font-semibold">Home</span>
                   </Link>
                 </li>
                 <li>
                   <Link to = "/bilingual"
-                    class="flex w-full items-center p-2 rounded-lg mx-10 hover:bg-white hover:text-[#6c63ff]">
+                    className="flex w-full items-center p-2 rounded-lg mx-10 hover:bg-white hover:text-[#6c63ff]">
                     <TbVocabulary size={29} />
 
-                    <span class="ml-3 font-sans font-semibold">Bilingual</span>
+                    <span className="ml-3 font-sans font-semibold">Bilingual</span>
                   </Link>
                 </li>
                 <li>
                   <Link to = "/vocabulary"
-                   class="flex w-full items-center p-2 rounded-lg mx-10 hover:bg-white hover:text-[#6c63ff]">
+                   className="flex w-full items-center p-2 rounded-lg mx-10 hover:bg-white hover:text-[#6c63ff]">
                     <BiAccessibility size={29} />
-                    <span class="ml-3 font-sans font-semibold">Vocabulary-Meta</span>
+                    <span className="ml-3 font-sans font-semibold">Vocabulary-Meta</span>
                   </Link>
                 </li>
                 <li>
                   <Link to = "/contact"
-                   class="flex w-full items-center p-2 rounded-lg mx-10 hover:bg-white hover:text-[#6c63ff]">
+                   className="flex w-full items-center p-2 rounded-lg mx-10 hover:bg-white hover:text-[#6c63ff]">
                     <FaDev size={29} />
-                    <span class="ml-3 font-sans font-semibold">Contact</span>
+                    <span className="ml-3 font-sans font-semibold">Contact</span>
                   </Link>
                 </li>
              </ul>

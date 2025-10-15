@@ -26,6 +26,8 @@ import VocaNgay5A2 from "./components/Vocabulary/A2/VocaNgay5";
 import VocaNgay6A2 from "./components/Vocabulary/A2/VocaNgay6";
 import VocaNgay7A2 from "./components/Vocabulary/A2/VocaNgay7";
 import Contact from "./Services/Contact";
+import MyVoca from "./components/Vocabulary/MyVoca/MyVoca";
+import MyVocaDay from "./components/Vocabulary/MyVoca/MyVocaDay";
 
 
 
@@ -41,14 +43,14 @@ function App() {
 
   return (
     <div className="App">
-      <div class="product-admin">
-        <div class="flex h-full flex-col">
+      <div className="product-admin">
+        <div className="flex h-full flex-col">
             
             
           <div className="flex">
             
-           <div class="flex-1 h-full">
-                 <div class="overflow-hidden tracking-widest text-center
+           <div className="flex-1 h-full">
+                 <div className="overflow-hidden tracking-widest text-center
                  rounded-lg border-spacing-1 border-gray-300 text-xs">
                     <Routes>
                       <Route path='/' element={<HomePage />} />
@@ -64,6 +66,8 @@ function App() {
                       <Route path='/vocabulary/B2' element={<B2 />} />
                       <Route path='/vocabulary/C1' element={<C1 />} />
                       <Route path='/vocabulary/C2' element={<C2 />} />
+                      <Route path='/vocabulary/MyVoca' element={<MyVoca />} />
+                      <Route path='/vocabulary/MyVoca/VocaNgay/:day' element={<MyVocaDay />} />
                       <Route path='/vocabulary/A1/VocaNgay1' element={<VocaNgay1A1 />} />
                       <Route path='/vocabulary/A1/VocaNgay2' element={<VocaNgay2A1 />} />
                       <Route path='/vocabulary/A1/VocaNgay3' element={<VocaNgay3A1 />} />

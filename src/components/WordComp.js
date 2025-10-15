@@ -95,12 +95,13 @@ const SynoAntoNyms = ({ synonyms }) => {
 const WordComp = ({ wordMeaning }) => {
   const { word, meanings, sourceUrls, phonetic, phonetics } = wordMeaning;
   const [playing, setPlaying] = useState(false);
-  let audio;
   const playingHandler = () => {
-    setPlaying(!playing);
-    if (phonetics.length > 0) {
-      audio = new Audio(phonetics[0].audio);
-    }
+    const src = Array.isArray(phonetics)
+      ? phonetics.find((p) => p && p.audio)?.audio
+      : undefined;
+    if (!src) return;
+    setPlaying((p) => !p);
+    const audio = new Audio(src);
     audio.play();
   };
 
@@ -131,14 +132,14 @@ const WordComp = ({ wordMeaning }) => {
             <div key={idx}>
               <Divider text={partOfSpeech} />
               <MeaningComp definitions={definitions} />
-              {synonyms.length == 0 ? (
+              {synonyms.length === 0 ? (
                 ""
               ) : (
                 <>
                   <SynoAntoNyms synonyms={synonyms} />
                 </>
               )}
-              {antonyms.length == 0 ? (
+              {antonyms.length === 0 ? (
                 ""
               ) : (
                 <>
@@ -154,11 +155,13 @@ const WordComp = ({ wordMeaning }) => {
       </div>
       <div className="flex flex-wrap my-4 items-center">
         <div className="text-xl text-gray-600 dark:text-gray-400">Source</div>
-        <a target={"_blank"} href={sourceUrls}>
-          <span className="ml-4 dark:text-[#fff] break-words ">
-            {sourceUrls}
-          </span>
-        </a>
+        {Array.isArray(sourceUrls) && sourceUrls.length > 0 ? (
+          <a target={"_blank"} rel="noreferrer" href={sourceUrls[0]}>
+            <span className="ml-4 dark:text-[#fff] break-words ">
+              {sourceUrls[0]}
+            </span>
+          </a>
+        ) : null}
         <span className="ml-1">
           <BiLinkExternal className="dark:text-[#fff]" />
         </span>
