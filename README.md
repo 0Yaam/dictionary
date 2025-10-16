@@ -1,5 +1,5 @@
 # Dictionary Project
-**Live demo:** [dictionary-orpin-zeta.vercel.app](dictionary-orpin-zeta.vercel.app)
+**Live demo:** [https://dictionary-orpin-zeta.vercel.app/](https://dictionary-orpin-zeta.vercel.app/)
 ## How to Use
 
 ### Requirements:
