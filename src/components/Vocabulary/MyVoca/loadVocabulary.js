@@ -1,3 +1,5 @@
+import csvAssetUrl from "../../../Assets/vocabulary/vocabulary.csv";
+
 let cachedPairs = null;
 
 const CSV_SPLIT_REGEX = /,(?=(?:[^"]*"[^"]*")*[^"]*$)/;
@@ -23,19 +25,15 @@ function parseCSV(text) {
 
 export async function loadVocabularyPairs(fallbackPairs) {
   if (cachedPairs) return cachedPairs;
+  // 1) Try the bundled CSV asset (static import ensures it exists in production bundles)
   try {
-    const mod = await import("../../../Assets/vocabulary/vocabulary.csv");
-    const csvUrl = mod && mod.default ? mod.default : mod;
-    if (csvUrl) {
-      // Ensure absolute URL to avoid route-relative fetches in production
-      const absUrl = new URL(csvUrl, document.baseURI).toString();
-      const res = await fetch(absUrl, { cache: 'no-cache' });
-      const ct = res.headers.get('content-type') || '';
-      if (res.ok && !ct.includes('text/html')) {
-        const text = await res.text();
-        cachedPairs = parseCSV(text);
-        return cachedPairs;
-      }
+    const absUrl = new URL(csvAssetUrl, document.baseURI).toString();
+    const res = await fetch(absUrl, { cache: 'no-cache' });
+    const ct = res.headers.get('content-type') || '';
+    if (res.ok && !ct.includes('text/html')) {
+      const text = await res.text();
+      cachedPairs = parseCSV(text);
+      return cachedPairs;
     }
   } catch (_) {}
   try {
@@ -56,6 +54,7 @@ export async function loadVocabularyPairs(fallbackPairs) {
     }
   } catch (_) {}
 
+  // 3) Try CSV served from public folder path if provided
   try {
     const res = await fetch((process.env.PUBLIC_URL || '') + '/vocabulary/vocabulary.csv', { cache: 'no-cache' });
     const ct = res.headers.get('content-type') || '';
