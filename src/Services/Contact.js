@@ -53,7 +53,7 @@ const Contact = () => {
               <img
                 src={github}
                 className="absolute w-12 h-12 right-[270px] bottom-[20px] cursor-pointer z-10"
-                onClick={() => handleIconClick("https://github.com/0Yaam/dictionary.git")}
+                onClick={() => handleIconClick("https://github.com/0Yaam")}
                 alt="GitHub"
               />
               <img
