@@ -27,8 +27,11 @@ export async function loadVocabularyPairs(fallbackPairs) {
     const mod = await import("../../../Assets/vocabulary/vocabulary.csv");
     const csvUrl = mod && mod.default ? mod.default : mod;
     if (csvUrl) {
-      const res = await fetch(csvUrl, { cache: 'no-cache' });
-      if (res.ok) {
+      // Ensure absolute URL to avoid route-relative fetches in production
+      const absUrl = new URL(csvUrl, document.baseURI).toString();
+      const res = await fetch(absUrl, { cache: 'no-cache' });
+      const ct = res.headers.get('content-type') || '';
+      if (res.ok && !ct.includes('text/html')) {
         const text = await res.text();
         cachedPairs = parseCSV(text);
         return cachedPairs;
@@ -36,8 +39,9 @@ export async function loadVocabularyPairs(fallbackPairs) {
     }
   } catch (_) {}
   try {
-    const res = await fetch(process.env.PUBLIC_URL + '/vocabulary/vocabulary.json', { cache: 'no-cache' });
-    if (res.ok) {
+    const res = await fetch((process.env.PUBLIC_URL || '') + '/vocabulary/vocabulary.json', { cache: 'no-cache' });
+    const ct = res.headers.get('content-type') || '';
+    if (res.ok && ct.includes('application/json')) {
       const data = await res.json();
       if (Array.isArray(data)) {
         if (Array.isArray(data[0])) {
@@ -53,8 +57,9 @@ export async function loadVocabularyPairs(fallbackPairs) {
   } catch (_) {}
 
   try {
-    const res = await fetch(process.env.PUBLIC_URL + '/vocabulary/vocabulary.csv', { cache: 'no-cache' });
-    if (res.ok) {
+    const res = await fetch((process.env.PUBLIC_URL || '') + '/vocabulary/vocabulary.csv', { cache: 'no-cache' });
+    const ct = res.headers.get('content-type') || '';
+    if (res.ok && !ct.includes('text/html')) {
       const text = await res.text();
       cachedPairs = parseCSV(text);
       return cachedPairs;
