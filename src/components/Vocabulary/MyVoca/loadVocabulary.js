@@ -27,8 +27,12 @@ export async function loadVocabularyPairs(fallbackPairs) {
   if (cachedPairs) return cachedPairs;
   // 1) Try the bundled CSV asset (static import ensures it exists in production bundles)
   try {
-    const absUrl = new URL(csvAssetUrl, document.baseURI).toString();
-    const res = await fetch(absUrl, { cache: 'no-cache' });
+    let csvUrl = csvAssetUrl;
+    if (!/^https?:\/\//i.test(csvUrl)) {
+      csvUrl = (csvUrl.startsWith('/') ? csvUrl : '/' + csvUrl);
+      csvUrl = new URL(csvUrl, window.location.origin).toString();
+    }
+    const res = await fetch(csvUrl, { cache: 'no-cache' });
     const ct = res.headers.get('content-type') || '';
     if (res.ok && !ct.includes('text/html')) {
       const text = await res.text();
