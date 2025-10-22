@@ -2,18 +2,18 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Header from "../../Header";
 import imgg from "../../../Assets/shy.png";
-import { myVocaPairs, wordsPerDay } from "./data";
+import { wordsPerDay } from "./constants";
 import { loadVocabularyPairs } from "./loadVocabulary";
 
 const MyVocaDay = () => {
   const { day } = useParams();
-  const [pairs, setPairs] = useState(myVocaPairs);
+  const [pairs, setPairs] = useState([]);
   const totalDays = useMemo(() => Math.ceil(pairs.length / wordsPerDay), [pairs.length]);
   const dayNum = Math.max(1, Math.min(parseInt(day || "1", 10) || 1, totalDays));
   const navigate = useNavigate();
 
   useEffect(() => {
-    loadVocabularyPairs(myVocaPairs).then((loaded) => setPairs(loaded));
+    loadVocabularyPairs([]).then((loaded) => setPairs(loaded));
   }, []);
 
   const words = useMemo(() => {

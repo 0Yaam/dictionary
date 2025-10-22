@@ -1,11 +1,11 @@
 import React, { useEffect, useMemo, useState } from "react";
 import Header from "../../Header";
 import { Link } from "react-router-dom";
-import { myVocaPairs, wordsPerDay } from "./data";
+import { wordsPerDay } from "./constants";
 import { loadVocabularyPairs } from "./loadVocabulary";
 
 const MyVoca = () => {
-  const [pairs, setPairs] = useState(myVocaPairs);
+  const [pairs, setPairs] = useState([]);
   const totalDays = useMemo(() => Math.ceil(pairs.length / wordsPerDay), [pairs.length]);
   // Work with numeric day values; render labels as "Ngày X"
   const days = useMemo(() => Array.from({ length: totalDays }, (_, i) => i + 1), [totalDays]);
@@ -14,7 +14,7 @@ const MyVoca = () => {
   const [filteredNodes, setFilteredNodes] = useState(days);
 
   useEffect(() => {
-    loadVocabularyPairs(myVocaPairs).then((loaded) => {
+    loadVocabularyPairs([]).then((loaded) => {
       setPairs(loaded);
     });
   }, []);
@@ -99,4 +99,3 @@ const MyVoca = () => {
 };
 
 export default MyVoca;
-
