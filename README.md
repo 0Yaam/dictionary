@@ -9,17 +9,17 @@
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/0Yaam/Dictionary_Project_Nhom6.git
+    git clone https://github.com/0Yaam/dictionary.git
     ```
 
 2. Navigate to the project directory:
     ```bash
-    cd Dictionary_Project_Nhom6
+    cd dictionary
     ```
 
 3. Install the necessary dependencies:
     ```bash
-    npm install react-scripts
+    npm install 
     ```
 
 4. Start the development server:
