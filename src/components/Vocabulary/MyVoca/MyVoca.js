@@ -7,7 +7,8 @@ import { loadVocabularyPairs } from "./loadVocabulary";
 const MyVoca = () => {
   const [pairs, setPairs] = useState(myVocaPairs);
   const totalDays = useMemo(() => Math.ceil(pairs.length / wordsPerDay), [pairs.length]);
-  const days = useMemo(() => Array.from({ length: totalDays }, (_, i) => `Ngày ${i + 1}`), [totalDays]);
+  // Work with numeric day values; render labels as "Ngày X"
+  const days = useMemo(() => Array.from({ length: totalDays }, (_, i) => i + 1), [totalDays]);
   const [nodes, setNodes] = useState(days);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredNodes, setFilteredNodes] = useState(days);
@@ -19,27 +20,19 @@ const MyVoca = () => {
   }, []);
 
   useEffect(() => {
-    const newDays = Array.from({ length: Math.ceil(pairs.length / wordsPerDay) }, (_, i) => `Ngày ${i + 1}`);
+    const newDays = Array.from({ length: Math.ceil(pairs.length / wordsPerDay) }, (_, i) => i + 1);
     setNodes(newDays);
     setFilteredNodes(newDays);
   }, [pairs]);
 
   const SapGiam = () => {
-    const sorted = [...nodes].sort((a, b) => {
-      const A = parseInt(a.replace("Ngày ", ""));
-      const B = parseInt(b.replace("Ngày ", ""));
-      return B - A;
-    });
+    const sorted = [...nodes].sort((a, b) => b - a);
     setNodes(sorted);
     setFilteredNodes(sorted);
   };
 
   const SapTang = () => {
-    const sorted = [...nodes].sort((a, b) => {
-      const A = parseInt(a.replace("Ngày ", ""));
-      const B = parseInt(b.replace("Ngày ", ""));
-      return A - B;
-    });
+    const sorted = [...nodes].sort((a, b) => a - b);
     setNodes(sorted);
     setFilteredNodes(sorted);
   };
@@ -47,7 +40,8 @@ const MyVoca = () => {
   const handleSearch = (e) => setSearchTerm(e.target.value);
 
   const handleSearchClick = () => {
-    const result = nodes.filter((n) => n.toLowerCase().includes(searchTerm.toLowerCase()));
+    const term = searchTerm.toLowerCase();
+    const result = nodes.filter((n) => (`Ngày ${n}`).toLowerCase().includes(term));
     setFilteredNodes(result);
   };
 
@@ -88,18 +82,15 @@ const MyVoca = () => {
           </div>
 
           <div className="w-full grid grid-cols-4 gap-2 flex-1 overflow-y-auto pr-1">
-            {filteredNodes.map((label, idx) => {
-              const day = parseInt(label.replace("Ngày ", ""));
-              return (
-                <Link
-                  key={idx}
-                  to={`/vocabulary/MyVoca/VocaNgay/${day}`}
-                  className="bg-gray-200 w-full h-12 flex items-center justify-center rounded-md shadow-md hover:bg-gray-300"
-                >
-                  {label}
-                </Link>
-              );
-            })}
+            {filteredNodes.map((day, idx) => (
+              <Link
+                key={idx}
+                to={`/vocabulary/MyVoca/VocaNgay/${day}`}
+                className="bg-gray-200 w-full h-12 flex items-center justify-center rounded-md shadow-md hover:bg-gray-300"
+              >
+                {`Ngày ${day}`}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
@@ -108,5 +99,4 @@ const MyVoca = () => {
 };
 
 export default MyVoca;
-
 
