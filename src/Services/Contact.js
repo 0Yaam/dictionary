@@ -3,10 +3,11 @@ import Header from "../components/Header";
 import love from "../Assets/sing.png";
 import avatar1 from "../Assets/GJb3zr4a0AAVYHP.png";
 import avatar2 from "../Assets/Susumu Nakoshi Icon.png";
-import avatar3 from "../Assets/happy.png";
-import avatar4 from "../Assets/shy.png";
+import avatar3 from "../Assets/manga.png";
+import avatar4 from "../Assets/sea.jpg";
 import github from "../Assets/github_PNG80.png";
 import supportme from "../Assets/support_me_on_kofi_beige.png";
+import avatar from "../Assets/sea.jpg";
 
 const Contact = () => {
   const [avatar, setAvatar] = useState(avatar1);
@@ -16,7 +17,7 @@ const Contact = () => {
       if (prevAvatar === avatar1) return avatar2;
       if (prevAvatar === avatar2) return avatar3;
       if (prevAvatar === avatar3) return avatar4;
-      return avatar1; // Quay lại avatar1
+      return avatar1; 
     });
   };
 
